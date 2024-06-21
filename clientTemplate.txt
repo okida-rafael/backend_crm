@@ -1,0 +1,17 @@
+  {
+    "company": "Empresa1",
+    "location": {
+      "address": "Rua Um, 2",
+      "city": "São Paulo",
+      "state": "SP"
+    },
+    "contact": {
+      "name": "Josias",
+      "phone1": "1122334455",
+      "email": "email@email.com.br"
+    },
+    "cnpj": "17.123.456/0001-80",
+    "obs": "Empresa Parceira",
+  }
+
+  
