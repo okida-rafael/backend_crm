@@ -1,6 +1,7 @@
 //Define as rotas da API para as operações CRUD.
 
 import express from "express";
+import { protect } from "../middlewares/authMiddleware.js";
 import {
   getClients,
   createClient,
@@ -11,8 +12,12 @@ import {
 
 const router = express.Router();
 
-router.route("/").get(getClients).post(createClient);
+router.route("/").get(protect, getClients).post(protect, createClient);
 
-router.route("/:id").get(getClientById).put(updateClient).delete(deleteClient);
+router
+  .route("/:id")
+  .get(protect, getClientById)
+  .put(protect, updateClient)
+  .delete(protect, deleteClient);
 
 export default router;

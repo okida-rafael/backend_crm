@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB, disconnectDB } from "./config/database.js";
 import clientRoutes from "./routes/clientRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import { notFound, errorHandler } from "./middlewares/errorMiddleware.js";
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/clients", clientRoutes);
+app.use("/api/usuarios", userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
